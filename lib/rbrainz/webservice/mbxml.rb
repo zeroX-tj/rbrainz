@@ -36,7 +36,7 @@ module MusicBrainz
       # Raises:: MBXML::ParseError
       def initialize(stream, factory=nil)
         begin
-          stream = stream.set_encoding "urf-8"
+          stream = stream.set_encoding "utf-8"
           @document = REXML::Document.new(stream)
         rescue REXML::ParseException => e
           raise ParseError, e.to_s
